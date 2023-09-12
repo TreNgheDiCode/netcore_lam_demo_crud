@@ -1,0 +1,56 @@
+﻿@model NguyenLieu
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h1>Bạn có chắc chắn muốn xóa nguyên liệu này không?</h1>
+<p class="text-danger">Dữ liệu sẽ bị xóa vĩnh viễn</p>
+
+<form method="post" asp-action="Delete" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="TenNguyenLieu">Tên nguyên liệu</label>
+        <input readonly type="text" asp-for="TenNguyenLieu" class="form-control" placeholder="Nhập tên nguyên liệu">
+        <span asp-validation-for="TenNguyenLieu" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NgaySanXuat" class="control-label">Ngày sản xuất</label>
+        <input readonly type="datetime-local" asp-for="NgaySanXuat" class="form-control" value="@DateTime.Now" min="1900-1-1" max="2100-1-1" placeholder="Nhập ngày sinh" />
+        <span asp-validation-for="NgaySanXuat" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NgayHetHan" class="control-label">Ngày hết hạn</label>
+        <input readonly type="datetime-local" asp-for="NgayHetHan" class="form-control" value="@DateTime.Now" min="1900-1-1" max="2100-1-1" placeholder="Nhập ngày hết hạn" />
+        <span asp-validation-for="NgayHetHan" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NgayNhap" class="control-label">Ngày nhập</label>
+        <input readonly type="datetime-local" asp-for="NgayNhap" class="form-control" value="@DateTime.Now" min="1900-1-1" max="2100-1-1" placeholder="Nhập ngày sinh" />
+        <span asp-validation-for="NgayNhap" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="SoLuongConLai">Số lượng còn lại</label>
+        <input readonly type="number" asp-for="SoLuongConLai" class="form-control" value="@Model.SoLuongConLai">
+        <span asp-validation-for="SoLuongConLai" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="GiaNhap">Giá nhập</label>
+        <input readonly type="number" asp-for="GiaNhap" class="form-control" value="@Model.GiaNhap">
+        <span asp-validation-for="GiaNhap" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Hang">Hãng</label>
+        <input readonly type="text" asp-for="Hang" class="form-control" placeholder="Nhập tên hãng">
+        <span asp-validation-for="Hang" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="my-3 btn btn-danger">Xóa</button>
+</form>

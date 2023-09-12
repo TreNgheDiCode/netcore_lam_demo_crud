@@ -1,0 +1,63 @@
+﻿@model NhanVien
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h1>Bạn có chắc chắn muốn xóa nhân viên này không?</h1>
+<p class="text-danger">Dữ liệu sẽ bị xóa vĩnh viễn</p>
+
+<form method="post" asp-action="Delete" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="HoTen">Họ tên</label>
+        <input readonly type="text" asp-for="HoTen" class="form-control" placeholder="Nhập họ tên">
+        <span asp-validation-for="HoTen" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CanCuocCongDan">Căn cước công dân</label>
+        <input readonly type="text" asp-for="CanCuocCongDan" class="form-control" placeholder="Nhập căn cước công dân">
+        <span asp-validation-for="CanCuocCongDan" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="GioiTinh" class="control-label">Giới tính</label>
+        <label>Nam</label>
+        <input readonly type="radio" asp-for="GioiTinh" value="Nam" />
+        <label>Nữ</label>
+        <input readonly type="radio" asp-for="GioiTinh" value="Nữ" />
+        <span asp-validation-for="GioiTinh" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NgaySinh" class="control-label">Ngày sinh</label>
+        <input readonly type="datetime-local" asp-for="NgaySinh" class="form-control" value="@DateTime.Now" min="1900-1-1" max="2100-1-1" placeholder="Nhập ngày sinh" />
+        <span asp-validation-for="NgaySinh" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DiaChi">Địa chỉ</label>
+        <input readonly type="text" asp-for="DiaChi" class="form-control" placeholder="Nhập địa chỉ">
+        <span asp-validation-for="DiaChi" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PhoneNumber">Số điện thoại</label>
+        <input readonly type="text" asp-for="PhoneNumber" class="form-control" placeholder="Nhập số điện thoại">
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LuongCoBan">Lương cơ bản</label>
+        <input readonly type="number" asp-for="LuongCoBan" class="form-control" value="100000">
+        <span asp-validation-for="LuongCoBan" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LuongTheoGio">Lương theo giờ</label>
+        <input readonly type="number" asp-for="LuongTheoGio" class="form-control" value="100000">
+        <span asp-validation-for="LuongTheoGio" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="my-3 btn btn-danger">Xóa</button>
+</form>
